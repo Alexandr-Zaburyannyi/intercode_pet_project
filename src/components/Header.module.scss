@@ -1,0 +1,34 @@
+.header {
+  position: sticky;
+  width: 100%;
+  height: 5vh;
+  z-index: 1001;
+  background-color: rgb(24, 24, 24);
+}
+
+.navbar {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  position: relative;
+  height: 50px;
+  width: 40px;
+  margin: 0 20px 0 20px;
+  cursor: pointer;
+}
+.link-container {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}

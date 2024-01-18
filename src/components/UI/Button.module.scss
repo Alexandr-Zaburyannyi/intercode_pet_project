@@ -1,0 +1,17 @@
+.button {
+  width: max-content;
+  height: 40px;
+  padding: 5px;
+  color: white;
+  background-color: black;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  &:hover {
+    color: darken(white, 20%);
+    background-color: lighten(black, 20%);
+  }
+}
