@@ -30,3 +30,8 @@ $white-color: rgb(255, 255, 255);
   justify-content: space-between;
   align-items: center;
 }
+.selected-car {
+  filter: brightness(1);
+  transform: scale(1);
+  transition-duration: 500ms;
+}
