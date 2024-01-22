@@ -22,7 +22,9 @@ const CarCard = (props) => {
         <Link className={classes["car-link"]} to="/not-found">
           read more
         </Link>
-        <Link className={classes["car-link"]}>configure</Link>
+        <Link className={classes["car-link"]} to={`/cars/${index + 1}`}>
+          configure
+        </Link>
       </div>
     </div>
   );

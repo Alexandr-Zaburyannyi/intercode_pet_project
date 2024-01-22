@@ -1,0 +1,27 @@
+.configurator-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.configurator {
+  justify-self: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
+  height: 100%;
+}
+.options-container {
+  display: flex;
+  & button {
+    border: none;
+    margin: 10px;
+    box-shadow: none;
+    & img {
+      cursor: pointer;
+    }
+  }
+}
+.selected-option {
+  border: red solid 2px;
+}
