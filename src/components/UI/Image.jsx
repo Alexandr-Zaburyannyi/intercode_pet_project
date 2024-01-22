@@ -25,7 +25,7 @@ import car3Color4 from "../../images/car3-color4.jpg";
 import car4Color4 from "../../images/car4-color4.jpg";
 
 const Image = (props) => {
-  const { carColor, carModel } = props;
+  const { carColor, carModel, styles } = props;
   const [carImages] = useState({
     color1Cars: { car1Color1, car2Color1, car3Color1, car4Color1 },
     color2Cars: { car2Color2, car1Color2, car3Color2, car4Color2 },
@@ -35,7 +35,7 @@ const Image = (props) => {
   return (
     <img
       src={carImages[`color${carColor}Cars`][`car${carModel}Color${carColor}`]}
-      className={""}
+      className={styles}
       alt=""
     />
   );

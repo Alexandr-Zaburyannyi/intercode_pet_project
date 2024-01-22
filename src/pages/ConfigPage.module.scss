@@ -3,10 +3,13 @@
   height: 100%;
 }
 .configurator {
-  display: flex;
+  display: flex-end;
   flex-direction: column;
-  align-items: end;
   width: 100%;
+  height: 100%;
+}
+.car-image {
+  width: 50vw;
   height: 100%;
 }
 .options-container {

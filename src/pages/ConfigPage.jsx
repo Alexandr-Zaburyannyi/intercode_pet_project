@@ -113,7 +113,11 @@ const ConfigPage = () => {
   return (
     <div className={classes["configurator-page"]}>
       <div>{totalPrice}$</div>
-      <Image carColor={selectedColor.key} carModel={selectedModel.model} />
+      <Image
+        carColor={selectedColor.key}
+        styles={classes["car-image"]}
+        carModel={selectedModel.model}
+      />
       <div className={classes.configurator}>
         <div className={classes["options-container"]}>
           {imagesObj.colors.map((color) => {
