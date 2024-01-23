@@ -1,10 +1,10 @@
 import { Outlet, useLocation } from "react-router";
 import { useState } from "react";
 import CarCard from "../components/UI/CarCard";
-import car1 from "../images/car1-color1.jpg";
-import car2 from "../images/car2-color1.jpg";
-import car3 from "../images/car3-color1.jpg";
-import car4 from "../images/car4-color1.jpg";
+import car1 from "../images/car1-rim1-color2.jpg";
+import car2 from "../images/car2-rim1-color1.jpg";
+import car3 from "../images/car3-rim1-color3.jpg";
+import car4 from "../images/car4-rim2-color4.jpg";
 import classes from "./CarsPage.module.scss";
 
 const CarsPage = () => {

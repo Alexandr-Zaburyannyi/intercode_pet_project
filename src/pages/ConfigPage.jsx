@@ -14,13 +14,13 @@ import carpet3 from "../images/carpet3.png";
 import carpet4 from "../images/carpet4.png";
 
 import rim1 from "../images/rim1.png";
-import rim2 from "../images/rim2.png";
-import rim3 from "../images/rim3.png";
-import rim4 from "../images/rim4.png";
+
+import rim2 from "../images/rim4.png";
 
 import carbonDesign from "../images/carbon-interior.png";
 
 import Image from "../components/UI/Image";
+import Button from "../components/UI/Button";
 
 const ConfigPage = () => {
   const [imagesObj] = useState({
@@ -28,10 +28,12 @@ const ConfigPage = () => {
       {
         model: 1,
         price: 20_000,
+        defaultColor: 2,
+        defaultRim: 1,
       },
-      { model: 2, price: 25_000 },
-      { model: 3, price: 30_000 },
-      { model: 4, price: 80_000 },
+      { model: 2, price: 25_000, defaultColor: 1, defaultRim: 1 },
+      { model: 3, price: 30_000, defaultColor: 3, defaultRim: 1 },
+      { model: 4, price: 80_000, defaultColor: 4, defaultRim: 2 },
     ],
     colors: [
       { color: color1, price: 40_000, key: 1 },
@@ -40,10 +42,8 @@ const ConfigPage = () => {
       { color: color4, price: 60_000, key: 4 },
     ],
     rims: [
-      { rim: rim1, price: 10_000 },
-      { rim: rim2, price: 10_100 },
-      { rim: rim3, price: 11_000 },
-      { rim: rim4, price: 12_000 },
+      { rim: rim1, price: 10_000, key: 1 },
+      { rim: rim2, price: 15_000, key: 2 },
     ],
     carpets: [
       { carpet: carpet1, price: 1000 },
@@ -63,8 +63,14 @@ const ConfigPage = () => {
   const [selectedModel] = useState(
     ...imagesObj.models.filter((model) => model.model === +carId)
   );
-  const [selectedColor, setSelectedColor] = useState(imagesObj.colors[0]);
-  const [selectedRim, setSelectedRim] = useState(imagesObj.rims[0]);
+  const [selectedColor, setSelectedColor] = useState(
+    ...imagesObj.colors.filter(
+      (color) => color.key === selectedModel.defaultColor
+    )
+  );
+  const [selectedRim, setSelectedRim] = useState(
+    ...imagesObj.rims.filter((rim) => rim.key === selectedModel.defaultRim)
+  );
   const [selectedCarpet, setSelectedCarpet] = useState(imagesObj.carpets[0]);
   const [isCarbonInterior, setIsCarbonInterior] = useState(
     imagesObj.carbonInterior
@@ -112,14 +118,21 @@ const ConfigPage = () => {
 
   return (
     <div className={classes["configurator-page"]}>
-      <div>{totalPrice}$</div>
-      <Image
-        carColor={selectedColor.key}
-        styles={classes["car-image"]}
-        carModel={selectedModel.model}
-      />
+      <div className={classes["image-container"]}>
+        <Image
+          rimModel={selectedRim.key}
+          carColor={selectedColor.key}
+          styles={classes["car-image"]}
+          carModel={selectedModel.model}
+        />
+        <div className={classes.price}>
+          <h1>Total Price: {totalPrice}$</h1>
+          <Button pathToRedirect={"/"}>Submit order</Button>
+        </div>
+      </div>
       <div className={classes.configurator}>
         <div className={classes["options-container"]}>
+          <h4>Car color:</h4>
           {imagesObj.colors.map((color) => {
             return (
               <button
@@ -140,6 +153,7 @@ const ConfigPage = () => {
           })}
         </div>
         <div className={classes["options-container"]}>
+          <h4>Car rims:</h4>
           {imagesObj.rims.map((rim) => {
             return (
               <button key={rim.rim} onClick={() => selectedRimHandler(rim)}>
@@ -158,6 +172,7 @@ const ConfigPage = () => {
         </div>
 
         <div className={classes["options-container"]}>
+          <h4>Carpets color:</h4>
           {imagesObj.carpets.map((carpet) => {
             return (
               <button
@@ -178,6 +193,7 @@ const ConfigPage = () => {
           })}
         </div>
         <div className={classes["options-container"]}>
+          <h4>Carbon interior:</h4>
           <button
             onClick={() =>
               setIsCarbonInterior((prevState) => {

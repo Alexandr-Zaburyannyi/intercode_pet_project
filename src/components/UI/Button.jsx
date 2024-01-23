@@ -4,7 +4,7 @@ import classes from "./Button.module.scss";
 const Button = (props) => {
   const navigate = useNavigate();
   const redirectBtnHandler = () => {
-    navigate("/not-found");
+    navigate(props.pathToRedirect ? props.pathToRedirect : "/not-found");
   };
 
   return (

@@ -30,6 +30,7 @@ const router = createBrowserRouter([
           {
             path: "/cars/:carId",
             element: <ConfigPage />,
+            errorElement: <NotFound />,
           },
         ],
       },
