@@ -5,9 +5,7 @@ const Footer = () => {
   const { pathname } = useLocation();
 
   const footerClassName = `${classes.footer} ${
-    pathname === "/not-found" || pathname.includes("/cars/")
-      ? classes.fixed
-      : ""
+    pathname === "/not-found" ? classes.fixed : ""
   }`;
 
   return (
