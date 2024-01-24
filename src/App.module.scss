@@ -1,3 +1,4 @@
+@import "./adaptive-mixins.scss";
 $black-color: black;
 $text-color-white: white;
 
@@ -25,6 +26,7 @@ $text-color-white: white;
 .image {
   height: 100vh;
   width: 100%;
+  object-fit: cover;
 }
 %basic-text {
   color: $black-color;
@@ -33,15 +35,23 @@ $text-color-white: white;
 }
 
 .news {
+  margin: 30px 0 20px 0;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  @include screen-sm() {
+    flex-direction: column-reverse;
+  }
+  @include screen-md() {
+    flex-direction: column-reverse;
+  }
 }
 .news-header {
   @extend %basic-text;
   font-weight: bold;
+  white-space: nowrap;
 }
 .news-image {
   width: 25vw;
@@ -52,8 +62,11 @@ $text-color-white: white;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 25%;
+  width: 40%;
   height: 20%;
+  & p {
+    margin-bottom: 15px;
+  }
 }
 .promotions {
   display: flex;
@@ -67,6 +80,12 @@ $text-color-white: white;
   display: flex;
   height: 33.333%;
   width: 100%;
+  @include screen-sm() {
+    flex-direction: column;
+  }
+  @include screen-md() {
+    flex-direction: column;
+  }
 }
 
 .promotion-cell {
@@ -74,6 +93,12 @@ $text-color-white: white;
   height: 100%;
   width: 50%;
   overflow: hidden;
+  @include screen-sm() {
+    width: 100%;
+  }
+  @include screen-md() {
+    width: 100%;
+  }
 }
 
 .promotion-image {
@@ -101,6 +126,13 @@ $text-color-white: white;
   top: 65%;
   left: 50%;
   transform: translate(-50%, 0);
+  white-space: nowrap;
+  @include screen-sm() {
+    top: 30%;
+  }
+  @include screen-md() {
+    top: 30%;
+  }
 }
 .promotion-h5 {
   @include text(16px, capitalize);

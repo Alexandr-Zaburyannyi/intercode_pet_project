@@ -1,3 +1,5 @@
+@use "./../adaptive-mixins.scss";
+
 .header {
   position: sticky;
   width: 100%;
@@ -22,15 +24,16 @@
 }
 .link-container {
   display: flex;
-  width: 30%;
-  justify-content: space-between;
+  width: 50%;
   list-style: none;
 }
 
 .nav-link {
   color: #fff;
   text-transform: uppercase;
+  white-space: nowrap;
   text-decoration: none;
+  margin-left: 10px;
 }
 .active-link {
   text-decoration: underline;

@@ -133,82 +133,90 @@ const ConfigPage = () => {
       <div className={classes.configurator}>
         <div className={classes["options-container"]}>
           <h4>Car color:</h4>
-          {imagesObj.colors.map((color) => {
-            return (
-              <button
-                onClick={() => selectColorHandler(color)}
-                key={color.color}
-              >
-                <img
-                  src={color.color}
-                  className={
-                    selectedColor.color === color.color
-                      ? classes["selected-option"]
-                      : ""
-                  }
-                  alt="color"
-                />
-              </button>
-            );
-          })}
+          <div className={classes.options}>
+            {imagesObj.colors.map((color) => {
+              return (
+                <button
+                  onClick={() => selectColorHandler(color)}
+                  key={color.color}
+                >
+                  <img
+                    src={color.color}
+                    className={
+                      selectedColor.color === color.color
+                        ? classes["selected-option"]
+                        : ""
+                    }
+                    alt="color"
+                  />
+                </button>
+              );
+            })}
+          </div>
         </div>
         <div className={classes["options-container"]}>
           <h4>Car rims:</h4>
-          {imagesObj.rims.map((rim) => {
-            return (
-              <button key={rim.rim} onClick={() => selectedRimHandler(rim)}>
-                <img
-                  src={rim.rim}
-                  className={
-                    selectedRim.rim === rim.rim
-                      ? classes["selected-option"]
-                      : ""
-                  }
-                  alt="rim"
-                />
-              </button>
-            );
-          })}
+          <div className={classes.options}>
+            {imagesObj.rims.map((rim) => {
+              return (
+                <button key={rim.rim} onClick={() => selectedRimHandler(rim)}>
+                  <img
+                    src={rim.rim}
+                    className={
+                      selectedRim.rim === rim.rim
+                        ? classes["selected-option"]
+                        : ""
+                    }
+                    alt="rim"
+                  />
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className={classes["options-container"]}>
           <h4>Carpets color:</h4>
-          {imagesObj.carpets.map((carpet) => {
-            return (
-              <button
-                key={carpet.carpet}
-                onClick={() => selectedCarpetHandler(carpet)}
-              >
-                <img
-                  src={carpet.carpet}
-                  className={
-                    selectedCarpet.carpet === carpet.carpet
-                      ? classes["selected-option"]
-                      : ""
-                  }
-                  alt="carpet"
-                />
-              </button>
-            );
-          })}
+          <div className={classes.options}>
+            {imagesObj.carpets.map((carpet) => {
+              return (
+                <button
+                  key={carpet.carpet}
+                  onClick={() => selectedCarpetHandler(carpet)}
+                >
+                  <img
+                    src={carpet.carpet}
+                    className={
+                      selectedCarpet.carpet === carpet.carpet
+                        ? classes["selected-option"]
+                        : ""
+                    }
+                    alt="carpet"
+                  />
+                </button>
+              );
+            })}
+          </div>
         </div>
         <div className={classes["options-container"]}>
           <h4>Carbon interior:</h4>
-          <button
-            onClick={() =>
-              setIsCarbonInterior((prevState) => {
-                return { ...prevState, selected: !prevState.selected };
-              })
-            }
-          >
-            <img
-              className={
-                isCarbonInterior.selected ? classes["selected-option"] : ""
+          <div className={classes.options}>
+            <button
+              onClick={() =>
+                setIsCarbonInterior((prevState) => {
+                  return { ...prevState, selected: !prevState.selected };
+                })
               }
-              src={imagesObj.carbonInterior.carbonDesign}
-              alt="carbon-interior"
-            />
-          </button>
+            >
+              <img
+                className={
+                  isCarbonInterior.selected ? classes["selected-option"] : ""
+                }
+                src={imagesObj.carbonInterior.carbonDesign}
+                alt="carbon-interior"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
