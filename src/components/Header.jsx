@@ -1,11 +1,19 @@
+import { useState } from "react";
+
 import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./Header.module.scss";
 import logo from "../images/white-horse.png";
 const Header = () => {
+  const [isOpened, setIsOpened] = useState(false);
+
   const navigate = useNavigate();
 
   const navigateHomeHandler = () => {
     navigate("/");
+  };
+
+  const toggleMenuHandler = () => {
+    setIsOpened((prevState) => !prevState);
   };
 
   return (
@@ -17,7 +25,17 @@ const Header = () => {
           className={classes.logo}
           alt=""
         />
-        <ul className={classes["link-container"]}>
+        <div className={classes["hamburger-menu"]} onClick={toggleMenuHandler}>
+          {" "}
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul
+          className={`${classes["link-container"]} ${
+            isOpened ? classes["adaptive-link-container"] : ""
+          }`}
+        >
           <li>
             <NavLink className={classes["nav-link"]} to="/not-found">
               racing

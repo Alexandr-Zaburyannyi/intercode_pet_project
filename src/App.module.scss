@@ -51,7 +51,7 @@ $text-color-white: white;
 .news-header {
   @extend %basic-text;
   font-weight: bold;
-  white-space: nowrap;
+  // white-space: nowrap;
 }
 .news-image {
   width: 25vw;
@@ -126,7 +126,6 @@ $text-color-white: white;
   top: 65%;
   left: 50%;
   transform: translate(-50%, 0);
-  white-space: nowrap;
   @include screen-sm() {
     top: 30%;
   }
@@ -135,6 +134,7 @@ $text-color-white: white;
   }
 }
 .promotion-h5 {
+  white-space: nowrap;
   @include text(16px, capitalize);
 }
 .promotion-h3 {
