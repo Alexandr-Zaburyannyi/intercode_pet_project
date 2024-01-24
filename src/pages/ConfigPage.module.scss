@@ -57,6 +57,7 @@
   height: 100%;
   @include screen-sm() {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
   }
   @include screen-md() {
@@ -83,6 +84,9 @@
   display: flex;
   @include screen-md() {
     flex-wrap: wrap;
+  }
+  @include screen-sm() {
+    flex-shrink: 3;
   }
   & button {
     position: relative;
