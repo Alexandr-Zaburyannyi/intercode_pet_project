@@ -1,6 +1,7 @@
 @import "../adaptive-mixins.scss";
 
 .configurator-page {
+  object-fit: cover;
   overflow: hidden;
   width: 100vw;
   height: 100%;
