@@ -71,7 +71,8 @@
     flex-wrap: wrap;
   }
   @include screen-sm() {
-    flex-shrink: 3;
+    flex-shrink: 1;
+    flex-wrap: wrap;
   }
   & button {
     position: relative;
