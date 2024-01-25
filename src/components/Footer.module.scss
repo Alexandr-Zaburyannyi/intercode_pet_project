@@ -45,11 +45,11 @@
   text-decoration: none;
   color: #fff;
 }
-.fixed {
+.fixed-not-found {
   position: fixed;
   bottom: 0;
 }
-.fixed-by-condition {
+.fixed-config-page {
   @include screen-lg() {
     position: fixed;
     bottom: 0;

@@ -5,13 +5,11 @@ const Footer = () => {
   const { pathname } = useLocation();
 
   const footerClassName = `${classes.footer} ${
-    pathname === "/not-found" ? classes.fixed : ""
-  }`;
-  const footerSecondClassName = `${
-    pathname === "/cars/" ? classes["fixed-by-condition"] : ""
-  }`;
+    pathname === "/not-found" ? classes["fixed-not-found"] : ""
+  } ${pathname.includes("/cars/") ? classes["fixed-config-page"] : ""}`;
+  // const footerSecondClassName = ``;
   return (
-    <footer className={`${footerClassName} ${footerSecondClassName}`}>
+    <footer className={`${footerClassName}`}>
       <div>
         <ul className={classes["link-container"]}>
           <li>
