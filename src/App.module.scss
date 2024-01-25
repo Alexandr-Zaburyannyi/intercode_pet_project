@@ -29,9 +29,13 @@ $text-color-white: white;
   object-fit: cover;
   @include screen-sm() {
     height: 50vh;
-    width: 100%;
+    width: 130%;
     object-fit: cover;
-    // transform: translateX(20%);
+  }
+  @include screen-md() {
+    height: 70vh;
+    width: 130%;
+    object-fit: cover;
   }
 }
 %basic-text {
@@ -41,7 +45,7 @@ $text-color-white: white;
 }
 
 .news {
-  margin: 30px 0 20px 0;
+  margin: 30px 0 30px 0;
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -60,12 +64,11 @@ $text-color-white: white;
   // white-space: nowrap;
 }
 .news-image {
-  width: 25vw;
-  height: 50vh;
   @include screen-sm() {
-    width: 15vw;
-    height: 40vh;
-    // margin: 0 20px 0 20px;
+    width: 70vw;
+    height: 60vh;
+    margin: 20px;
+    object-fit: cover;
   }
 }
 .news-text {
@@ -73,13 +76,16 @@ $text-color-white: white;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
+  width: 20%;
   height: 20%;
   & p {
     margin-bottom: 15px;
   }
   @include screen-sm() {
     width: 50%;
+  }
+  @include screen-md() {
+    width: 35%;
   }
 }
 .promotions {

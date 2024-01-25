@@ -29,7 +29,7 @@ function App() {
           <Button>read more</Button>
         </div>
         <div>
-          <img className={classes["news-iamge"]} src={carImage} alt="" />
+          <img className={classes["news-image"]} src={carImage} alt="" />
         </div>
       </div>
 
