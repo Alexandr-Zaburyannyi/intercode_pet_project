@@ -1,10 +1,11 @@
 @import "./../adaptive-mixins.scss";
 
 .header {
+  // padding: 10px 0 10px 0;
   position: sticky;
   display: flex;
   width: 100%;
-  height: 5vh;
+  height: 7vh;
   z-index: 1001;
   background-color: rgb(24, 24, 24);
 }
@@ -38,6 +39,9 @@
   width: 40px;
   margin: 0 20px 0 20px;
   cursor: pointer;
+  // @include screen-sm() {
+  //   padding: 10px 7px 10px 7px;
+  // }
 }
 .link-container {
   display: flex;
@@ -66,7 +70,7 @@
 }
 .adaptive-link-container {
   background-color: rgb(24, 24, 24);
-  left: 10%;
+  left: 15%;
   top: 80%;
   width: 150px;
   position: absolute;

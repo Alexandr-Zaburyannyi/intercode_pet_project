@@ -27,6 +27,12 @@ $text-color-white: white;
   height: 100vh;
   width: 100%;
   object-fit: cover;
+  @include screen-sm() {
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    // transform: translateX(20%);
+  }
 }
 %basic-text {
   color: $black-color;
@@ -56,6 +62,11 @@ $text-color-white: white;
 .news-image {
   width: 25vw;
   height: 50vh;
+  @include screen-sm() {
+    width: 15vw;
+    height: 40vh;
+    // margin: 0 20px 0 20px;
+  }
 }
 .news-text {
   display: flex;
@@ -66,6 +77,9 @@ $text-color-white: white;
   height: 20%;
   & p {
     margin-bottom: 15px;
+  }
+  @include screen-sm() {
+    width: 50%;
   }
 }
 .promotions {

@@ -7,6 +7,7 @@
   border-radius: 10px;
   width: 60vw;
   height: 35vh;
+  overflow: hidden;
   margin-bottom: 50px;
   box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
   @include screen-lg() {
@@ -19,6 +20,11 @@
   height: 80%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  @include screen-sm() {
+    width: 120%;
+    transform: translateX(-10%);
+    object-fit: fill;
+  }
 }
 .link-container {
   height: 20%;

@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import classes from "./Header.module.scss";
 import logo from "../images/white-horse.png";
 const Header = () => {
+  const location = useLocation();
   const [isOpened, setIsOpened] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsOpened(false);
+  }, [location.pathname]);
 
   const navigateHomeHandler = () => {
     navigate("/");
