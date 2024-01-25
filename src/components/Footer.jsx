@@ -7,9 +7,11 @@ const Footer = () => {
   const footerClassName = `${classes.footer} ${
     pathname === "/not-found" ? classes.fixed : ""
   }`;
-
+  const footerSecondClassName = `${
+    pathname === "/cars/" ? classes["fixed-by-condition"] : ""
+  }`;
   return (
-    <footer className={footerClassName}>
+    <footer className={`${footerClassName} ${footerSecondClassName}`}>
       <div>
         <ul className={classes["link-container"]}>
           <li>

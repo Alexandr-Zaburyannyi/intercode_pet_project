@@ -14,10 +14,6 @@
   height: 130px;
   overflow: hidden;
   background-color: rgb(24, 24, 24);
-  @include screen-lg() {
-    position: fixed;
-    bottom: 0;
-  }
 }
 .link-container {
   @include flex-container();
@@ -52,4 +48,10 @@
 .fixed {
   position: fixed;
   bottom: 0;
+}
+.fixed-by-condition {
+  @include screen-lg() {
+    position: fixed;
+    bottom: 0;
+  }
 }
