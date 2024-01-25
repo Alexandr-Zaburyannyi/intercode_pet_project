@@ -145,6 +145,7 @@ $text-color-white: white;
   @include text(36px, uppercase);
   margin: 30px 0 30px 0;
   @include screen-sm() {
+    margin: 15px 0 15px 0;
     @include text(24px, uppercase);
   }
 }
