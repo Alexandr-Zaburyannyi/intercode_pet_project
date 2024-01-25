@@ -14,11 +14,6 @@
     padding-top: 20px;
     flex-direction: column;
   }
-  @include screen-md() {
-    // justify-content: center;
-    // padding-top: 20px;
-    // flex-direction: column;
-  }
   background-color: rgb(24, 24, 24);
 }
 .configurator {
@@ -32,9 +27,8 @@
     width: 100%;
     margin-bottom: 30px;
   }
-  @include screen-md() {
-    // width: 100%;
-    // margin-bottom: 30px;
+  @include screen-lg() {
+    margin-top: 70px;
   }
 }
 .price {
@@ -46,10 +40,6 @@
   @include screen-sm() {
     margin-left: 10px;
   }
-  @include screen-md() {
-    // margin-left: 10px;
-    // white-space: pre-wrap;
-  }
 }
 .image-container {
   margin: 0 0 50px 50px;
@@ -59,11 +49,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  }
-  @include screen-md() {
-    // display: flex;
-    // justify-content: space-around;
-    // margin: 0 0 20px 50px;
   }
 }
 .car-image {
@@ -90,7 +75,7 @@
   }
   & button {
     position: relative;
-    border-radius: 100px;
+    border-radius: 50%;
     border: none;
     margin: 10px;
     box-shadow: none;
@@ -106,6 +91,10 @@
       @include screen-md() {
         height: 90px;
         width: 90px;
+      }
+      @include screen-lg() {
+        height: 130px;
+        width: 130px;
       }
     }
   }

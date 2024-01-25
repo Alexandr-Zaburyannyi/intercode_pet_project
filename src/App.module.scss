@@ -61,7 +61,6 @@ $text-color-white: white;
 .news-header {
   @extend %basic-text;
   font-weight: bold;
-  // white-space: nowrap;
 }
 .news-image {
   @include screen-sm() {
